@@ -1,0 +1,282 @@
+{
+	"info": {
+		"_postman_id": "076261ca-41e8-4397-a5fb-370e69dcb235",
+		"name": "Dating",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29819992"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"male1@mail.com\",\n    \"password\": \"123456\",\n    \"name\": \"male\",\n    \"age\": 25,\n    \"gender\": \"MALE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"male1@mail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Go Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ1c2VyMUBtYWlsLmNvbSIsIm5hbWUiOiJ1c2VyMSIsImlhdCI6MTcwNDMzNzU4Mn0.kGT4POq81a3TCpi9kgUWm0_0_g5xg0Djk_E77ljEE08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/v1/user/go-premium",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"user",
+								"go-premium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Relation",
+			"item": [
+				{
+					"name": "LikeDislike",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ1c2VyMUBtYWlsLmNvbSIsIm5hbWUiOiJ1c2VyMSIsImlhdCI6MTcwNDM4Mzg2NX0.p6haiZNEuLgpC0-AEZeae58YPv6qONuEZYK6etdn1QA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"target_id\": 8,\n    \"action\": \"like or dislike (choose 1)\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/relation/like-dislike",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"relation",
+								"like-dislike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matches List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ1c2VyMUBtYWlsLmNvbSIsIm5hbWUiOiJ1c2VyMSIsImlhdCI6MTcwNDI5MTAwN30.bHYnAoug_8h1UNk-AgICeEye5GhvZLGDaf5cSobjSn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/relation/matches",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"relation",
+								"matches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liked By List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ1c2VyMUBtYWlsLmNvbSIsIm5hbWUiOiJ1c2VyMSIsImlhdCI6MTcwNDMzNzU4Mn0.kGT4POq81a3TCpi9kgUWm0_0_g5xg0Djk_E77ljEE08",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/relation/liked-by",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"relation",
+								"liked-by"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Of Jodoh",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZW1haWwiOiJ1c2VyMUBtYWlsLmNvbSIsIm5hbWUiOiJ1c2VyMSIsImlhdCI6MTcwNDI5MTAwN30.bHYnAoug_8h1UNk-AgICeEye5GhvZLGDaf5cSobjSn8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/relation?start_age=20&end_age=30",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"relation"
+							],
+							"query": [
+								{
+									"key": "start_age",
+									"value": "20"
+								},
+								{
+									"key": "end_age",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
